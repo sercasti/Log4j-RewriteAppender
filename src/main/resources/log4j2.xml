@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" packages="com.logger">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<Rewrite name="Rewrite">
+			<InjectMarkerPolicy />
+			<AppenderRef ref="Console" />
+		</Rewrite>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Rewrite" />
+		</Root>
+	</Loggers>
+</Configuration>
+
